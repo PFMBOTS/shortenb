@@ -65,8 +65,12 @@ async def start_command(client: Client, message: Message):
 
         for msg in messages:
 
-            if bool(CUSTOM_CAPTION) & bool(msg.document):
-                caption = CUSTOM_CAPTION.format(previouscaption = "" if not msg.caption else msg.caption.html, filename = msg.document.file_name)
+            if bool(CUSTOM_CAPTION) and (bool(msg.document) or bool(msg.video) or bool(msg.audio)):
+                filname = msg.document.file_name if msg.document else msg.video.file_name if msg.video else msg.audio.file_name if msg.audio else ""
+                caption = CUSTOM_CAPTION.format(
+                    previouscaption="" if not msg.caption else msg.caption.html,
+                    filename=filname
+                )
             else:
                 caption = "" if not msg.caption else msg.caption.html
 
