@@ -53,7 +53,7 @@ except ValueError:
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Sorry {first} You Have To join the Below Channels First To Access Our Files..\n\n So Please Join The Below Channels First And Click On “Now Click Here” button....!")
 
 #set your Custom Caption here, Keep None for Disable Custom Caption
-CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "<blockquote><b>» ʙʏ @Audio_Versee</b></blockquote>")
+CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "<blockquote>» ʙʏ @Audio_Versee</blockquote>")
 
 #set True if you want to prevent users from forwarding files from bot
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" else False
