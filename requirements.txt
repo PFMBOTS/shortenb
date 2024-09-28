@@ -9,3 +9,4 @@ dnspython
 flask
 gunicorn
 aiohttp
+pyshorteners
